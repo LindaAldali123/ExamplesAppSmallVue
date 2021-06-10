@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main1.css" />
+    <title>ToDo List</title>
+  </head>
+
+  <body>
+    <div id="linda-app" class="container" :style="{'--maincolor':color}">
+      <h1>Welcome To Vue.js</h1>
+      <form action="">
+        <input type="text" placeholder="Type Your Task" v-model="taskText" />
+        <button @click.prevent="addTask" :disabled="!taskText">Add Task</button>
+        <button
+          @click.prevent="deleteAll"
+          class="delete-all"
+          v-if="tasks.length > 1"
+        >
+          Delete All
+        </button>
+      </form>
+      <div class="tasks-list" v-for="(task,index) in tasks">
+        <div
+          class="task-box"
+          @click="task.done = !task.done"
+          :style="{'text-decoration' : task.done ? 'line-through' : ''}"
+        >
+          {{task.words}}
+        </div>
+        <span class="delete" @click.stop="deleteTask(index)">Delete</span>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#linda-app",
+        data: {
+          tasks: [],
+          taskText: "",
+        },
+        methods: {
+          addTask: function () {
+            this.tasks.push({ words: this.taskText, done: false });
+            this.taskText = "";
+          },
+          deleteTask: function (index) {
+            this.tasks.splice(index, 1);
+          },
+          deleteAll: function () {
+            this.tasks = [];
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

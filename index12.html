@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue.js Computed III</title>
+</head>
+
+<body>
+    <div id="linda-app">
+        <h1>Welcome To Vue.js</h1>
+        <label>Write Your Username:</label>
+        <input type="text" v-model="username">
+        <!--v-model.lazy Not apear words direct because late word-->
+        <p>{{validateUsername}}</p>
+    </div>
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#linda-app',
+            data: {
+                username: '',
+            },
+            methods: {
+
+            },
+            computed: {
+                validateUsername: function () {
+                    if (!this.username) {
+                        return 'Username Cant Be Empty';
+                    } else if (this.username.length < 8) {
+                        return 'Username Is Too Short.';
+                    } else if (!isNaN(this.username)) {
+                        return 'Username Cant be Numbers Only.';
+                    } else {
+                        return 'Hello' + this.username + 'Everything Is Good.';
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

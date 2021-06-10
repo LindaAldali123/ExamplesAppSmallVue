@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue.js v-show | v-once</title>
+</head>
+
+<body>
+    <div id="linda-app">
+        <h1>Welcome To Vue.js</h1>
+        <p v-once>Welcome {{name}}</p>
+        <!--Appear Only One and Not update it-->
+        <p v-show="name">My Name Is {{name}}</p>
+        <!--Apear propriets Is: My Name Is-->
+        <p v-if="age">My Age Is {{age}}</p>
+        <!--Not Apear Proprites-->
+    </div>
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#linda-app',
+            data: {
+                name: 'Mohammed',
+                age: 34,
+            }
+        })
+    </script>
+</body>
+
+</html>

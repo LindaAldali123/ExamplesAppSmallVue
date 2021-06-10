@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main1.css" />
+    <title>Show Hide Message</title>
+  </head>
+
+  <body>
+    <div id="linda-app" class="container">
+      <h1>Welcome To Vue.js</h1>
+      <button @click="message = !message">
+        {{message ? 'Hide Message' : 'Show Message'}}
+      </button>
+      <transition name="fade"
+        ><!--Many transition Example Slide-fade - bounce..... from website  vue.js transition-->
+        <div class="the-message" v-if="message">This Is An Alert!</div>
+      </transition>
+    </div>
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#linda-app",
+        data: {
+          message: false,
+        },
+      });
+    </script>
+  </body>
+</html>

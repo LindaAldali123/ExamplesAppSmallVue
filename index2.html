@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue.js v-for</title>
+</head>
+
+<body>
+    <div id="linda-app">
+        <h1>Welcome To Vue.js</h1>
+        <ul>
+            <li v-for="skill in skills">{{skill}}</li>
+        </ul>
+        <!--To Enter The Index-->
+        <ul>
+            <li v-for="(skill,index) in skills">{{index}} => {{skill}}</li>
+        </ul>
+        <!--To Objects-->
+        <ul>
+            <li v-for="test in completedTests">
+                {{test.testName}} | {{test.testResult}}
+            </li>
+        </ul>
+       <!--To Enter The Index-->
+        <ul>
+            <li v-for="(test,index) in completedTests">
+              {{index}} - {{test.testName}} | {{test.testResult}}
+            </li>
+        </ul>
+    </div>
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#linda-app',
+            data: {
+                name: 'Linda',
+                age: 25,
+                date: 'Today',
+                skills: ['Html', 'Css', 'JavaScript','Sass'],
+                isSubscribed: false,
+                completedTests: [
+                    {
+                        testName: 'First Test',
+                        testResult: '80%'
+                    },
+                    {
+                        testName: 'Second Test',
+                        testResult: '70%'
+                    },
+                    {
+                        testName: 'Third Test',
+                        testResult: '90%'
+                    },
+                ]
+            },
+            methods: {
+                saySomething: function () {
+                    return 'Hello From Vue.js Methods';
+                },
+                sayname: function () {
+                    return this.name
+                },
+                YourAgeInDays: function () {
+                    return 'Your Age In Days Is :' + this.age * 365;
+                },
+                showNewDate: function () {
+                    this.date = Date();
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

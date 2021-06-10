@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue.js Computed II</title>
+</head>
+
+<body>
+    <div id="linda-app">
+        <h1>Welcome To Vue.js</h1>
+        <!--  <p>{{fullname()}}</p>
+       <p>{{fullname()}}</p>
+       <p>{{fullname()}}</p>
+       <p>{{fullname()}}</p>
+       <p>{{fullname()}}</p>-->
+        <!--Method Work Render To Run-->
+        <p>{{fullname}}</p>
+        <p>{{fullname}}</p>
+        <p>{{fullname}}</p>
+        <label>Search For Programming Languages:</label>
+        <input type="text" v-model="FindLanguages">
+        <ul>
+            <li v-for="lang in filterLanguages">
+                {{lang}}
+            </li>
+        </ul>
+    </div>
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#linda-app',
+            data: {
+                age: 25,
+                message: 'Software Engineer In AlBaath University.',
+                firstname: 'Linda',
+                lastname: 'Aldali',
+                FindLanguages: '',
+                languages: [
+                    'html',
+                    'Css',
+                    'JavaScript',
+                    'Sass',
+                    'Pugjs',
+                    'Es6',
+                    'Java',
+                    'C#',
+                    'Mysql',
+                    'Python',
+                    'Php',
+                ]
+            },
+            methods: {
+                /* fullname:function(){
+                     console.log('Run');
+                     return this.firstname+' '+this.lastname;
+                 } */
+            },
+            computed: {
+                fullname: function () {
+                    console.log('Run');
+                    return this.firstname + ' ' + this.lastname;
+                    // return `${this.firstname} ${this.lastname}`;
+                },
+                filterLanguages: function () {
+                    var filtering = new RegExp(this.FindLanguages, 'i');//i not sensative for الاحرف
+                    return this.languages.filter(function (el) {
+                        return el.match(filtering);
+                    });
+                    return this.languages.filter(el => el.match(filtering));// Es6 طريقة 2 وهي اختصار للسطرين فوق
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

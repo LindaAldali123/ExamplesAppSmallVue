@@ -1,0 +1,223 @@
+*{
+    box-sizing: border-box;
+}
+.container {
+  text-align: center;
+}
+.product {
+    margin-top: 50px;
+   margin-left: 420px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid #333;
+  padding: 40px;
+  background-color: bisque;
+  border-radius: 4px;
+  width: 500px;
+  height: 320px;
+}
+.product span{
+    width: 100%;
+}
+.product .total-price .amount{
+    left: 0;
+    text-align: left !important;
+    margin-right: 50px;
+    background-color: #FFF;
+    border-radius: 4px;
+    padding:5px 20px;
+}
+.product .total-price .total{
+    margin-left: 50px;
+    text-align: right !important;
+    background-color: #FFF;
+    border-radius: 4px;
+    padding:5px 20px;
+}
+.product input{
+    width: 250px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*==========Color========*/
+.switch-colors{
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+}
+.switch-colors li{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    display: inline-block;
+    cursor: pointer;
+}
+.switch-colors li:first-child{
+background-color: #b71540;
+}
+.switch-colors li:nth-child(2){
+    background-color: #0c2461;
+}
+.switch-colors li:nth-child(3){
+    background-color: #3c6382;
+}
+.switch-colors li:nth-child(4){
+    background-color: #079992;
+}
+.switch-colors li:last-child{
+    background-color: #e58e26;
+}
+.changes{
+    overflow: hidden;
+    margin-left: 120px;
+}
+.changes div{
+    background-color: var(--maincolor);
+    color: #FFF;
+    padding: 20px 0;
+    text-align: center;
+    float: left;
+    width: calc(79% / 4);
+}
+.changes div:not(:last-of-type){
+    margin-right: 1%;
+}
+/*==========Color========*/
+/*==========Convert======*/
+.container form{
+    margin-top: 100px !important;
+    margin: 20px auto;
+}
+.container form input{
+    font-weight: bold;
+    font-size: 24px;
+    padding: 15px;
+    color: #333;
+    border: 1px solid #CCC;
+    height: 40px;
+}
+.container form  button{
+    height: 40px !important;
+    color: #FFF;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 100px;
+    background-color: rgb(190, 81, 81);
+}
+.container .slug-result{
+    margin-left: 350px;
+    font-size: 24px;
+    color: #333;
+    background-color: #EEE;
+    padding: 15px;
+    font-weight: bold;
+    width: 500px;
+    text-align: center;
+}
+/*==========Convert======*/
+/*==========Textarea======*/
+.container h4{
+    font-size: 24px;
+}
+.container textarea{
+    font-size: 24px;
+    width: 400px;
+    height: 200px;
+    resize: none;
+    background-color: #EEE;
+    border: 1px solid #CCC;
+}
+.container .counter{
+    display: block;
+    font-size: 24px;
+    padding-top: 10px;
+}
+.container .zero span{
+    color: red;
+}
+/*=========Textarea======*/
+/*==========Accordion======*/
+.container .question-box:not(:last-child){
+    border-bottom: 1px solid #eee;
+}
+.container .question-box h3{
+    margin: 0;
+    padding: 15px;
+    background-color: #dfdfdf;
+    text-align: left;
+}
+.container .question-box h3:hover{
+    cursor: pointer;
+}
+.container .question-box .question-replay{
+    background-color: #efefef;
+    padding: 15px;
+    text-align: left;
+}
+.container .question-box .question-replay p{
+    margin:0;
+}
+/*==========Accordion======*/
+/*=========SimpleValid======*/
+.container form{
+    width: 500px;
+    height: 20px auto;
+}
+.container form .errors-list .error{
+    margin-bottom: 8px;
+    padding: 15px;
+    background-color: rgba(244,67,54,0.14);
+}
+.container form .form-group{
+    margin-bottom: 10px;
+}
+.container form label{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.container form .form-input{
+    padding: 10px 15px;
+    background-color: #afb3b8;
+    color: #FFF;
+    border-color: transparent;
+    padding: 10px 20px;
+    width: 100%;
+    font-size: 24px;
+}
+.container form textarea{
+    height: 120px;
+    resize: none;
+}
+.container form .send-button{
+    display: block;
+    background-color: #2196f3;
+    color: #FFF;
+    border-color: transparent;
+    padding: 10px 20px;
+    width: 100%;
+    font-size: 24px;
+}
+/*=========SimpleValid======*/
+/*==========Tabs===========*/
+.container .tabs-choose{
+    margin-bottom: 0;
+}
+.container .tabs-choose li{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #EEE;
+    cursor: pointer;
+    opacity: .3;
+}
+.container .tabs-choose li:active{
+    opacity: 1;
+}
+.container .tabs-content{
+    width: 1000px;
+    background-color: #EEE;
+    margin: 0 auto;
+    padding: 20px;
+}
+/*==========Tabs==========*/

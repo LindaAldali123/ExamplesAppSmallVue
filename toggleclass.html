@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main1.css" />
+    <title>Toggle Class</title>
+  </head>
+
+  <body>
+    <div id="linda-app" class="container">
+      <div class="meth">
+        <h1>Welcome To Vue.js</h1>
+        <button
+          :class="{selected:isSelected}"
+          @click="isSelected = !isSelected"
+        >
+          First Method
+        </button>
+        <button @click="toggle">Second Method</button>
+        <button @click="toggleAdvanced($event,'selected')">Third Method</button>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#linda-app",
+        data: {
+          isSelected: false,
+        },
+        methods: {
+          toggle: function (event) {
+            event.target.classList.toggle("selected");
+          },
+          toggleAdvanced: function (event, theClass) {
+            event.target.classList.toggle(theClass);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

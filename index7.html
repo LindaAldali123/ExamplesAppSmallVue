@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue.js Components</title>
+</head>
+
+<body>
+    <div id="linda-app">
+        <h1>Welcome To Vue.js</h1>
+       <app-count :source="source" :url="url"></app-count>
+       <app-count :source="source" :url="url"></app-count>
+       <app-count :source="source" :url="url"></app-count>
+    </div>
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+        Vue.component('app-count',{
+       data:function(){
+           return{
+               name:'Ahmed',
+               count:0
+           }
+       },
+       props:['source','url'],
+       template:'<p @click="count++">Hello {{name}} You Clicked This Paragraph {{count}} Times And Source Is {{source}} And Url Is {{url}}</p>'
+        })
+        var vm = new Vue({
+            el: '#linda-app',
+            data: {
+                name: 'Linda',
+                source:'Elzero Web School',
+                url:'Https://Elzero.org',
+            }
+        })
+    </script>
+</body>
+
+</html>

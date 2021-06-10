@@ -1,0 +1,121 @@
+/* Todo List */
+.container{
+    text-align: center;
+}
+.container form{
+    margin-top: 50px !important;
+    margin: 20px auto 10px;
+    width: 700px;
+    overflow: hidden;
+}
+.container form input{
+    background-color: #f7f7f7;
+    border:1px solid #eee;
+    margin-bottom: 15px;
+    width: calc(100% - 260px);
+    height: 36px;
+    padding: 10px;
+    float: left;
+}
+.container form input:focus{
+    outline: none;
+}
+.container form button{
+    width: 110px;
+    height: 56px !important;
+    padding: 10px;
+    background-color: #2196f3;
+    color: #FFF;
+    border-color: transparent;
+    cursor: pointer;
+    float: left;
+    margin-left: 5px;
+}
+.container form button:disabled{
+    opacity: 0.4;
+    cursor: no-drop;
+}
+.container form button:focus{
+    outline: none;
+}
+.container form button.delete-all{
+    width: 110px;
+    background-color: #f44336;
+}
+.container .tasks-list{
+    width: 700px;
+    margin: 0 auto;
+}
+.container .tasks-list .task-box{
+    background-color: rgba(139, 195, 74, 0.25);
+    padding: 15px;
+    text-align: left;
+    margin-bottom: 15px;
+    margin-right: 5px;
+    width: calc(100% - 176px);
+    cursor: pointer;
+    float: left;
+}
+.container .tasks-list .delete{
+    float: right;
+    width: 110px;
+    height: 46px;
+    background-color: #f44336;
+    color: #FFF;
+    border-color: transparent;
+    padding: 1px 10px;
+    cursor: pointer;
+    line-height: 51px;
+}
+/* Todo List */
+/* Show Hide Message */
+.container .the-message{
+    padding: 20px;
+    background-color: #eee;
+    max-width: 400px;
+    margin: 20px auto;
+}
+.fade-enter-active,
+.fade-leave-active{
+   transition: opacity 0.5s; 
+}
+.fade-leave-to,.fade-enter{
+    opacity: 0;
+}
+/* Show Hide Message */
+img{
+    width: 600px;
+    height: 400px;
+}
+/*Toggle Class */
+.meth button{
+    padding: 10px 20px;
+    background-color: #f00;
+    color: #FFF;
+    border:1px solid #f00;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.meth button:focus{
+    outline: none;
+}
+.meth button.selected{
+    background-color: #080;
+    border-color: #080;
+}
+/*Toggle Class */
+/* Validate Button */
+.metho button{
+    width: 460px !important;
+    display: block !important;
+    padding: 15px 10px !important;
+    background-color: #2196f3;
+    color: #fff;
+    border-color: transparent;
+    cursor: pointer !important;
+}
+.metho button:disabled{
+    opacity: 0.4 !important;
+    cursor: no-drop !important;
+}
+/* Validate Button */

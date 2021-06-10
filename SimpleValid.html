@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css">
+    <title>Simple Form Validation</title>
+  </head>
+
+  <body>
+    <div id="linda-app" class="container">
+      <h1>Welcome To Vue.js</h1>
+      <form action="index.html" method="POST" @submit="validateform">
+          <div class="errors-list">
+              <div class="error" v-for="error in formErrors">
+                {{error}}
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="">Username:</label>
+              <input type="text" name="username" class="form-input" v-model="username"/>
+          </div>
+          <div class="form-group">
+            <label for="">Subject:</label>
+            <input type="text" name="subject" class="form-input" v-model="subject"/>
+        </div>
+        <div class="form-group">
+            <label for="">Message:</label>
+           <textarea name="message" class="form-input" v-model="message"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit"  class="send-button" value="Send"/>
+        </div>
+      </form>
+    </div>
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#linda-app",
+        data: {
+        formErrors:[],
+        username:null,
+        subject:null,
+        message:null,
+        maxChars:10
+        },methods:{
+            validateform:function(e){
+                this.formErrors=[]; //Empty Errors To Start Fresh
+                // Check If Username Is Empty
+                if(!this.username){
+                this.formErrors.push('Username Cant Be Empty');
+                }
+                 //[2] Check If Subject Is Empty
+                 if(!this.subject){
+                this.formErrors.push('Subject Cant Be Empty');
+                }
+                //[3] Check If Message Is Empty
+                if(!this.message){
+                this.formErrors.push('Message Cant Be Empty');
+                }
+                //[4] Check Username Characters Count
+                if(this.username && this.username.length > this.maxChars){
+                this.formErrors.push('Username Cant Be More Than '+this.maxChars+' Characters');
+                }
+                // If No Errors Return True
+                 if(!this.formErrors.length){
+                  return true;
+                 }
+                e.preventDefault();
+            }
+        }
+      });
+    </script>
+  </body>
+</html>

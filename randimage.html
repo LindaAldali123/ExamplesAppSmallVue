@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main1.css" />
+    <title>Show Random Image</title>
+  </head>
+
+  <body>
+    <div id="linda-app" class="container">
+      <h1>Welcome To Vue.js</h1>
+      <img v-if="selected" :src="selected" alt=""/>
+    </div>
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+        var photos=[
+            "img/s1.jpg", //Index 0
+            "img/s2.jpg", // Index 1
+            "img/s3.jpg",
+            "img/s4.jpg",
+            "img/s5.jpg",
+            "img/s6.jpg",
+            "img/s7.jpg",
+            "img/s8.jpg",
+
+        ];
+      var vm = new Vue({
+        el: "#linda-app",
+        data: {
+         photos:photos,
+         selected:null,
+        },
+        methods:{
+            randomPhoto(imgs){
+              return imgs[Math.floor(Math.random() * photos.length)]; // Math.floor تقريب لادنى  Math.ciel تقريب لاعلى  
+            }
+        },
+        created(){
+            this.selected = this.randomPhoto(this.photos);
+        }
+      });
+    </script>
+  </body>
+</html>

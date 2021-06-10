@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Tabs</title>
+  </head>
+
+  <body>
+    <div id="linda-app" class="container">
+      <h1>Welcome To Vue.js</h1>
+      <ul class="tabs-choose">
+        <li
+          @click.prevent="activeTab = '1' "
+          :class="[activeTab === '1' ? 'active' : ' ' ]"
+        >
+          Tab One
+        </li>
+        <li
+          @click.prevent="activeTab = '2' "
+          :class="[activeTab === '2' ? 'active' : ' ' ]"
+        >
+          Tab Two
+        </li>
+        <li
+          @click.prevent="activeTab = '3' "
+          :class="[activeTab === '3' ? 'active' : ' ' ]"
+        >
+          Tab Three
+        </li>
+        <li
+          @click.prevent="activeTab = '4' "
+          :class="[activeTab === '4' ? 'active' : ' ' ]"
+        >
+          Tab Four
+        </li>
+      </ul>
+      <div class="tabs-content">
+        <div class="content-one" v-if="activeTab === '1' ">Content One</div>
+        <div class="content-one" v-if="activeTab === '2' ">Content Two</div>
+        <div class="content-one" v-if="activeTab === '3' ">Content Three</div>
+        <div class="content-one" v-if="activeTab === '4' ">Content Four</div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#linda-app",
+        data: {
+          activeTab: "1",
+        },
+      });
+    </script>
+  </body>
+</html>

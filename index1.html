@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue.js v-text | v-html</title>
+</head>
+
+<body>
+    <div id="linda-app">
+        <h1>Welcome To Vue.js</h1>
+        <p>Welcome {{name}} To Are Happy To See You.</p>
+        <p v-text="'Mr ' + name"></p> <!--Not Appear Awosem Html-->
+        <p v-text="nam ? 'Your Name Is Set' : 'Your Name Is Not Set'"></p>
+        <p v-html="title"></p> <!-- Appear Awosem Html-->
+    </div>
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#linda-app',
+            data: {
+                name: 'Ahmad',
+                nam:true,
+                title:'<b class="rank">Nooob</b>'
+            }
+        })
+    </script>
+</body>
+
+</html>

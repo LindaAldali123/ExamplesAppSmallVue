@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>TextArea</title>
+  </head>
+
+  <body>
+    <div id="linda-app" class="container">
+      <h1>Welcome To Vue.js</h1>
+      <h4>Write Your Message ( {{maxLength}} characters Allowed)</h4>
+      <textarea @input="countchars" v-model="message" :maxlength="maxLength"></textarea>
+      <span class="counter" :class="{'zero' : reachzero}"> Left | <span>{{remainingchars}}</span> </span>
+    </div>
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#linda-app",
+        data: {
+          maxLength: 20,
+          remainingchars: 20,
+          message: null,
+          reachzero: false,
+        },
+        methods: {
+          countchars: function () {
+              this.remainingchars=this.maxLength - this.message.length;
+              this.reachzero=this.remainingchars === 0;
+              console.log(this.reachzero);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

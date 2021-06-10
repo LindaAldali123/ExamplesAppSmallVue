@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Get GitHub Repo Api</title>
+  </head>
+
+  <body>
+    <div id="linda-app" class="container">
+      <h1>Welcome To Vue.js</h1>
+      <input type="text" v-model="username" />
+      <button @click="getRepos">Get Repos</button>
+      <div v-for="repo in repos">
+         <h4>{{repo.name}}</h4>
+         <p>{{repo.description}}</p>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+    <script type="text/javascript" src="js/axios.js"></script>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#linda-app",
+        data: {
+          username: null,
+          repos: null,
+        },
+        methods: {
+          getRepos: function () {
+            /*
+            [1] Get Data From Api
+            [2] Return The Response
+            [3] Catch Error
+            */
+            return /*'https://api.github.com/users/"${this.username}"/repos'     Es6*/
+            axios.get("https://api.github.com/users/" + this.username + "/repos").then((response) => {
+                this.repos = response.data;
+              }).catch(error => {
+                console.log(error);
+                            })
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

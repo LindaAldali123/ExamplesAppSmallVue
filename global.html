@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue.js</title>
+</head>
+
+<body>
+    <div id="linda-app">
+        <h1>Welcome To Vue.js</h1>
+        <p>Welcome {{name.toUpperCase()}} To Are Happy To See You.</p>
+        <P>{{name.length > 4 ? name : 'Name is to short'}}</P>
+        <p>{{'Mr ' + name}}</p>
+        <p>Your Age Is : {{age + ' Years'}}</p>
+        <p>Your First Skills Is: {{skills[0]}}</p>
+        <p>You Are {{isSubscribed ? 'Subscibed' : 'Not Subscribed'}}</p>
+        <p>Your First Test Is: {{completedTests[0]. testName}}</p>
+        <p>Your First Result Is: {{completedTests[0]. testResult}}</p>
+        <p>{{saySomething()}}</p>
+        <p>{{sayname()}}</p>
+        <p>{{date}}</p>
+        <p>{{YourAgeInDays()}}</p>
+        <button @click="showNewDate">Show New Date</button>
+        <!-- Condition ? true : false -->
+    </div>
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#linda-app',
+            data: {
+                name: 'Linda',
+                age: 25,
+                date: 'Today',
+                skills: ['Html', 'Css', 'Js'],
+                isSubscribed: false,
+                completedTests: [
+                    {
+                        testName: 'First Test',
+                        testResult: '80%'
+                    },
+                    {
+                        testName: 'Second Test',
+                        testResult: '70%'
+                    },
+                    {
+                        testName: 'Third Test',
+                        testResult: '90%'
+                    },
+                ]
+            },
+            methods: {
+                saySomething: function () {
+                    return 'Hello From Vue.js Methods';
+                },
+                sayname: function () {
+                    return this.name
+                },
+                YourAgeInDays: function () {
+                    return 'Your Age In Days Is :' + this.age * 365;
+                },
+                showNewDate: function () {
+                    this.date = Date();
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

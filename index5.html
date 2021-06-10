@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue.js v-bind | v-on</title>
+</head>
+
+<body>
+    <div id="linda-app">
+        <h1>Welcome To Vue.js</h1>
+        <p>Welcome {{name}}</p>
+        <!--v-bind and may write : only-->
+        <a v-bind:href="imgurl">
+            <img v-bind:src="imgsrc" v-bind:alt="imgalt" />
+        </a>
+        <!--==========================================================================================-->
+        <a :href="imgurl">
+            <img :src="imgsrc" :alt="imgalt" />
+        </a>
+        <!--===========================================================================================-->
+        <p>Counter Is {{counter}}</p>
+        <!-- @ Shortcut For v-on -->
+        <button v-on:click="counter++" type="button" name="button">Increase Counter</button>
+        <!--- 
+        <button v-on:click.right="counter += 2" type="button" name="button">Increase Counter</button>
+        <button v-on:click.left="counter += 3" type="button" name="button">Increase Counter</button>
+        <button v-on:click.midlle="counter += 4" type="button" name="button">Increase Counter</button>
+         -->
+    </div>
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#linda-app',
+            data: {
+                name: 'Mohammed',
+                age: 34,
+                imgsrc: 'img/imag.png',
+                imgalt: 'Alter',
+                imgurl: 'https://www.google.com',
+                counter: 0,
+            }
+        })
+    </script>
+</body>
+
+</html>

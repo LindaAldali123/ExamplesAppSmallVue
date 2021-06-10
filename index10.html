@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue.js Computed</title>
+</head>
+
+<body>
+    <div id="linda-app">
+        <h1>Welcome To Vue.js</h1>
+          <!--<p>{{calcAge()}}</p>-->
+          <p>{{calcAge}}</p>
+          <p>{{mas}}</p>
+          <!--Compare Betweem Method and Computed Run One only for Function
+        Method Accept Parameters and Method call Function() but computed Function()-->
+    </div>
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#linda-app',
+            data: {
+                age: 25,
+                message: 'Software Engineer In AlBaath University.'
+            },
+            methods: {
+      /*calcAge:function(){
+          console.log('Run');
+          return this.age * 2;
+      }*/
+            },
+            computed: {
+                calcAge:function(){
+          console.log('Run');
+          return this.age * 2;
+      }
+      ,mas:function(){
+          console.log('Run');
+          return this.message.split('').reverse().join('');
+      }
+            }
+        })
+    </script>
+</body>
+
+</html>

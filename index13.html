@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue.js Watch</title>
+</head>
+
+<body>
+    <div id="linda-app">
+        <h1>Welcome To Vue.js</h1>
+       <label>Egyption Pound</label>
+       <input type="text" v-model="eg">
+       <label>Saudi Riyal</label>
+       <input type="text" v-model="sar">
+       <br><br><br>
+       <label>Hour</label>
+       <input type="text" v-model="hour">
+       <label>Minute</label>
+       <input type="text" v-model="minute">
+       <label>Second</label>
+       <input type="text" v-model="second">
+    </div>
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#linda-app',
+            data: {
+              eg:0,
+              sar:0,
+              hour:0,
+              minute:0,
+              second:0, 
+            },
+            methods: {
+
+            },
+            computed: {
+               
+            },
+            watch:{
+              eg:function(v){
+                 this.sar=v/5; 
+              },
+              sar:function(v){
+                 this.eg=v*5; 
+              },
+              hour:function(v){
+                 this.minute=v*60; 
+                 console.log('Run Hour');
+              },
+              minute:function(v){
+                 this.hour=v/60; 
+                 this.second=v*60;
+                 console.log('Run Minute');
+              },
+              second:function(v){
+                 this.minute=v/60; 
+                 console.log('Run Second');
+              }
+            }
+        })
+    </script>
+</body>
+
+</html>
